@@ -7,7 +7,6 @@ export async function load({ locals }) {
     if (!locals.user) {
         throw redirect(303, '/login');
     }
-
     return {};
 }
 
@@ -40,10 +39,10 @@ export const actions = {
                 [imageUrl, description, locals.user.id]
             );
 
-        } catch (err) {
-            console.log(err);
-            return fail(500, { error: 'Fehler beim Hochladen des Bildes.' });
-        }
+        }  catch (err) {
+    console.log("UPLOAD ERROR:", err);
+    return fail(500, { error: 'Fehler beim Hochladen des Bildes.' });
+}
 
         throw redirect(303, '/');
     }
