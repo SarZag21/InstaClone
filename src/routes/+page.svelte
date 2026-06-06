@@ -69,48 +69,72 @@
 
 {:else}
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7">
+  <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 items-start">
 
-        {#each data.images as image}
+       {#each data.images as image}
 
-            <div class="bg-white rounded-2xl overflow-hidden shadow-md">
+    <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition duration-300 flex flex-col">
 
-                <a href={`/images/${image.id}`}>
+        <a href={`/images/${image.id}`} class="block overflow-hidden bg-gray-200">
+            <img
+                src={image.image}
+                alt={image.description}
+                class="w-full h-72 object-cover hover:scale-105 transition duration-300"
+            >
+        </a>
 
-                    <img
-                        src={image.image}
-                        alt={image.description}
-                        class="w-full h-72 object-cover"
-                    >
+        <div class="p-5 flex flex-col gap-4">
 
+            <div class="flex justify-between items-center">
+                <p class="font-bold text-gray-900">
+                    @{image.username}
+                </p>
+
+                <a
+                    href={`/images/${image.id}`}
+                    class="text-blue-600 text-sm hover:underline"
+                >
+                    Details
                 </a>
+            </div>
 
-                <div class="p-5">
+            <p class="text-gray-700 text-sm line-clamp-2">
+                {image.description}
+            </p>
 
-                    <div class="flex justify-between items-center mb-3">
+            <div class="flex gap-3 pt-2">
 
-                        <p class="font-bold text-gray-900">
-                            @{image.username}
-                        </p>
+                <form method="POST" action="?/vote">
+                    <input type="hidden" name="imageId" value={image.id}>
+                    <input type="hidden" name="voteType" value="like">
 
-                        <a
-                            href={`/images/${image.id}`}
-                            class="text-blue-600 text-sm hover:underline"
-                        >
-                            Details
-                        </a>
+                    <button
+                        type="submit"
+                        class="border border-gray-300 px-4 py-2 rounded-lg text-sm hover:bg-gray-100 transition"
+                    >
+                        Like {image.votes}
+                    </button>
+                </form>
 
-                    </div>
+                <form method="POST" action="?/vote">
+                    <input type="hidden" name="imageId" value={image.id}>
+                    <input type="hidden" name="voteType" value="dislike">
 
-                    <p class="text-gray-700 text-sm">
-                        {image.description}
-                    </p>
-
-                </div>
+                    <button
+                        type="submit"
+                        class="border border-gray-300 px-4 py-2 rounded-lg text-sm hover:bg-gray-100 transition"
+                    >
+                        Dislike {image.dislikes}
+                    </button>
+                </form>
 
             </div>
 
-        {/each}
+        </div>
+
+    </div>
+
+{/each}
 
     </div>
 
