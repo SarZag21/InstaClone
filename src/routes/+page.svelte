@@ -50,7 +50,6 @@
         {form.error}
     </p>
 {/if}
-
 {#if data.images.length === 0}
 
     <div class="bg-white border border-gray-200 rounded-2xl p-10 text-center shadow-sm">
@@ -65,6 +64,53 @@
         >
             Upload first image
         </a>
+
+    </div>
+
+{:else}
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7">
+
+        {#each data.images as image}
+
+            <div class="bg-white rounded-2xl overflow-hidden shadow-md">
+
+                <a href={`/images/${image.id}`}>
+
+                    <img
+                        src={image.image}
+                        alt={image.description}
+                        class="w-full h-72 object-cover"
+                    >
+
+                </a>
+
+                <div class="p-5">
+
+                    <div class="flex justify-between items-center mb-3">
+
+                        <p class="font-bold text-gray-900">
+                            @{image.username}
+                        </p>
+
+                        <a
+                            href={`/images/${image.id}`}
+                            class="text-blue-600 text-sm hover:underline"
+                        >
+                            Details
+                        </a>
+
+                    </div>
+
+                    <p class="text-gray-700 text-sm">
+                        {image.description}
+                    </p>
+
+                </div>
+
+            </div>
+
+        {/each}
 
     </div>
 
