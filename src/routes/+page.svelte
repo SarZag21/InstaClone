@@ -12,6 +12,13 @@
             </div>
 
             <nav class="flex gap-3 items-center text-sm font-medium">
+             <a href="/register" class="px-4 py-2 rounded-lg hover:bg-gray-100 transition">
+        Register
+    </a>
+
+    <a href="/login" class="px-4 py-2 rounded-lg hover:bg-gray-100 transition">
+        Login
+    </a>
                 <a href="/upload" class="px-4 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition">
                     Upload
                 </a>
