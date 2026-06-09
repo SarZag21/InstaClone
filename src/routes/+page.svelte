@@ -27,9 +27,11 @@
                     Profile
                 </a>
 
-                <a href="/logout" class="px-4 py-2 rounded-lg text-red-500 hover:bg-red-50 transition">
-                    Logout
-                </a>
+                <form method="POST" action="/logout?/logout">
+                  <button type="submit" class="px-4 py-2 rounded-lg text-red-500 hover:bg-red-50 transition">
+                   Logout
+                  </button>
+                </form>
             </nav>
         </div>
     </header>
