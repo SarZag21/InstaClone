@@ -2,9 +2,9 @@
     let { form } = $props();
 </script>
 
-<div class="min-h-screen bg-[#111827] text-white px-6 py-10">
+<div class="min-h-screen bg-[#111827] text-white px-6 py-10 flex items-center justify-center ">
 
-    <div class="bg-white/10 border border-white/10 rounded-3xl p-8 shadow-xl">
+    <div class="bg-white/10 border border-white/10 rounded-3xl p-8 shadow-xl w-full max-w-2xl mx-auto">
 
         <h1 class="text-3xl font-bold text-center mb-6">
             Upload Image
