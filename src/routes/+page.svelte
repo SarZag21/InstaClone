@@ -16,14 +16,14 @@
         Register
     </a>
 
-    <a href="/login" class="px-4 py-2 rounded-lg hover:bg-gray-100 transition">
+    <a href="/login" class="px-4 py-2 rounded-full hover:bg-white/10 transition">
         Login
     </a>
                 <a href="/upload" class="px-5 py-2 rounded-full bg-gradient-to-r from-pink-500 to-violet-500 text-white font-semibold hover:opacity-90 transition">
                     Upload
                 </a>
 
-                <a href="/profile" class="px-4 py-2 rounded-lg hover:bg-gray-100 transition">
+                <a href="/profile" class="px-4 py-2 rounded-full hover:bg-white/10 transition">
                     Profile
                 </a>
 
