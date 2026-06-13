@@ -2,24 +2,24 @@
     let { data, form } = $props();
 </script>
 
-<div class="min-h-screen bg-gray-100">
-    <header class="sticky top-0 z-20 bg-white/90 backdrop-blur border-b border-gray-200">
+<div class="min-h-screen bg-[#111827] text-white">
+    <header class="sticky top-0 z-20 bg-[#111827]/90 backdrop-blur border-b border-white/10">
         <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
             <div>
-                <h1 class="text-xl font-bold text-gray-900">
-                    InstaClone
-                </h1>
+              <a href="/" class="text-2xl font-black tracking-tight">
+    Insta<span class="text-pink-400">Clone</span>
+</a>
             </div>
 
             <nav class="flex gap-3 items-center text-sm font-medium">
-             <a href="/register" class="px-4 py-2 rounded-lg hover:bg-gray-100 transition">
+             <a href="/register" class="px-4 py-2 rounded-full hover:bg-white/10 transition">
         Register
     </a>
 
     <a href="/login" class="px-4 py-2 rounded-lg hover:bg-gray-100 transition">
         Login
     </a>
-                <a href="/upload" class="px-4 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition">
+                <a href="/upload" class="px-5 py-2 rounded-full bg-gradient-to-r from-pink-500 to-violet-500 text-white font-semibold hover:opacity-90 transition">
                     Upload
                 </a>
 
@@ -28,7 +28,7 @@
                 </a>
 
                 <form method="POST" action="/logout?/logout">
-                  <button type="submit" class="px-4 py-2 rounded-lg text-red-500 hover:bg-red-50 transition">
+                  <button type="submit" class="px-4 py-2 rounded-full text-red-300 hover:bg-red-500/10 transition">
                    Logout
                   </button>
                 </form>
@@ -38,13 +38,12 @@
 
     <main class="max-w-6xl mx-auto px-6 py-8">
     <section class="mb-8">
-    <h2 class="text-3xl font-bold text-gray-900">
+   <h2 class="text-4xl font-black tracking-tight">
         Latest Images
     </h2>
 
-    <p class="text-gray-500 mt-1">
-        See the newest images uploaded by all users.
-    </p>
+   
+
 </section>
 
 {#if form?.error}
@@ -73,9 +72,9 @@
 
   <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 items-start">
 
-       {#each data.images as image}
+{#each data.images as image}
 
-    <div class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition duration-300 flex flex-col">
+  <div class="bg-white/10 border border-white/10 rounded-3xl overflow-hidden hover:-translate-y-1 hover:bg-white/15 transition duration-300 flex flex-col">
 
         <a href={`/images/${image.id}`} class="block overflow-hidden bg-gray-200">
             <img
@@ -88,7 +87,7 @@
         <div class="p-5 flex flex-col gap-4">
 
             <div class="flex justify-between items-center">
-                <p class="font-bold text-gray-900">
+                <p class="font-bold text-white">
                     @{image.username}
                 </p>
 
@@ -100,7 +99,7 @@
                 </a>
             </div>
 
-            <p class="text-gray-700 text-sm line-clamp-2">
+            <p class="text-slate-300 text-sm line-clamp-2">
                 {image.description}
             </p>
 
@@ -112,7 +111,7 @@
 
                     <button
                         type="submit"
-                        class="border border-gray-300 px-4 py-2 rounded-lg text-sm hover:bg-gray-100 transition"
+                       class="px-4 py-2 rounded-full bg-white/10 border border-white/10 text-sm hover:bg-pink-500 transition"
                     >
                         Like {image.votes}
                     </button>
@@ -124,8 +123,7 @@
 
                     <button
                         type="submit"
-                        class="border border-gray-300 px-4 py-2 rounded-lg text-sm hover:bg-gray-100 transition"
-                    >
+                      class="px-4 py-2 rounded-full bg-white/10 border border-white/10 text-sm hover:bg-slate-700 transition">
                         Dislike {image.dislikes}
                     </button>
                 </form>
@@ -133,13 +131,11 @@
             </div>
 
         </div>
-
-    </div>
-
+</div>
 {/each}
 
     </div>
 
 {/if}
     </main>
-</div>
+    </div>
