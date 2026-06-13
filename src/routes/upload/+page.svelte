@@ -2,9 +2,9 @@
     let { form } = $props();
 </script>
 
-<div class="min-h-screen flex items-center justify-center bg-slate-100">
+<div class="min-h-screen bg-[#111827] text-white px-6 py-10">
 
-    <div class="bg-white p-8 rounded-xl shadow-lg w-full max-w-md">
+    <div class="bg-white/10 border border-white/10 rounded-3xl p-8 shadow-xl">
 
         <h1 class="text-3xl font-bold text-center mb-6">
             Upload Image
@@ -28,7 +28,7 @@
                     id="image"
                     name="image"
                     accept="image/*"
-                    class="w-full border border-gray-300 rounded-lg p-2"
+                    class="w-full bg-white/10 border border-white/10 rounded-2xl px-4 py-3"
                 >
             </div>
 
@@ -41,13 +41,13 @@
                     id="description"
                     name="description"
                     rows="4"
-                    class="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                   class="w-full bg-white/10 border border-white/10 rounded-2xl px-4 py-3 text-white focus:outline-none focus:border-pink-400"
                 ></textarea>
             </div>
 
             <button
                 type="submit"
-                class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition"
+                class="w-full bg-gradient-to-r from-pink-500 to-violet-500 py-3 rounded-2xl font-bold hover:opacity-90 transition"
             >
                 Upload
             </button>

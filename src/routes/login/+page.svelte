@@ -23,9 +23,13 @@
                     Email
                 </label>
 
-                <input
-                  class="w-full bg-white/10 border border-white/10 rounded-2xl px-4 py-3 text-white focus:outline-none focus:border-pink-400"
-                >
+         <input
+          type="email"
+          id="email"
+          name="email"
+          autocomplete="off"
+          class="w-full bg-slate-700 border border-slate-600 rounded-2xl px-4 py-3 text-white placeholder:text-slate-400 focus:outline-none focus:border-pink-400 focus:ring-2 focus:ring-pink-400/30"
+        />
             </div>
 
             <div>
@@ -34,13 +38,16 @@
                 </label>
 
                 <input
-                   class="w-full bg-white/10 border border-white/10 rounded-2xl px-4 py-3 text-white focus:outline-none focus:border-pink-400"
+                 type="password"
+                 name="password"
+                 autocomplete="current-password"
+                 class="w-full bg-slate-700 border border-slate-600 rounded-2xl px-4 py-3 text-white placeholder:text-slate-400 focus:outline-none focus:border-pink-400 focus:ring-2 focus:ring-pink-400/30"
                 >
             </div>
 
             <button
             type="submit"
-            class="w-full bg-white/10 border border-white/10 rounded-2xl px-4 py-3 text-white focus:outline-none focus:border-pink-400"
+            class="w-full bg-gradient-to-r from-pink-500 to-violet-500 py-3 rounded-2xl font-bold hover:opacity-90 transition"
             >
                 Login
             </button>
