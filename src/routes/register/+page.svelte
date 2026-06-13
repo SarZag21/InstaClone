@@ -2,9 +2,9 @@
     let { form } = $props();
 </script>
 
-<div class="min-h-screen flex items-center justify-center bg-slate-100">
+<div class="min-h-screen bg-[#111827] text-white flex items-center justify-center px-6">
 
-    <div class="bg-white p-8 rounded-xl shadow-lg w-full max-w-md">
+    <div class="w-full max-w-md bg-white/10 border border-white/10 rounded-3xl p-8 shadow-xl">
 
         <h1 class="text-3xl font-bold text-center mb-6">
             Register
@@ -23,12 +23,7 @@
                     Username
                 </label>
 
-                <input
-                    type="text"
-                    id="username"
-                    name="username"
-                    class="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                >
+                <input class="w-full bg-white/10 border border-white/10 rounded-2xl px-4 py-3 text-white focus:outline-none focus:border-pink-400">
             </div>
 
             <div>
@@ -36,12 +31,7 @@
                     Email
                 </label>
 
-                <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    class="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                >
+                <input class="w-full bg-white/10 border border-white/10 rounded-2xl px-4 py-3 text-white focus:outline-none focus:border-pink-400">
             </div>
 
             <div>
@@ -49,19 +39,14 @@
                     Password
                 </label>
 
-                <input
-                    type="password"
-                    id="password"
-                    name="password"
-                    class="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                >
+                <input class="w-full bg-white/10 border border-white/10 rounded-2xl px-4 py-3 text-white focus:outline-none focus:border-pink-400">
             </div>
 
-            <button
-                type="submit"
-                class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition"
+           <button
+            type="submit"
+            class="w-full bg-gradient-to-r from-pink-500 to-violet-500 py-3 rounded-2xl font-bold hover:opacity-90 transition"
             >
-                Register
+             Register
             </button>
 
         </form>
