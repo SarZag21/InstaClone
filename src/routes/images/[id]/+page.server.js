@@ -1,7 +1,7 @@
 import pool from '$lib/server/database.js';
 import { error, fail, redirect } from '@sveltejs/kit';
 
-export async function load({ params }) {
+export async function load({ params, url }) {
     const imageId = params.id;
 
     const [rows] = await pool.execute(
@@ -40,7 +40,8 @@ export async function load({ params }) {
 
     return {
         image,
-        comments
+        comments,
+         from: url.searchParams.get('from')
     };
   }
 

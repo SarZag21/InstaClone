@@ -76,7 +76,7 @@
 
   <div class="bg-white/10 border border-white/10 rounded-3xl overflow-hidden hover:-translate-y-1 hover:bg-white/15 transition duration-300 flex flex-col">
 
-        <a href={`/images/${image.id}`} class="block overflow-hidden bg-gray-200">
+      <a href={`/images/${image.id}?from=home`}>
             <img
                 src={image.image}
                 alt={image.description}

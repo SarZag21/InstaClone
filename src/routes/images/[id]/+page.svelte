@@ -4,9 +4,12 @@
 
 <div class="min-h-screen bg-[#111827] text-white px-6 py-10">
  <div class="max-w-4xl mx-auto">
-       <a href="/" class="text-pink-300 hover:underline">
-          Back to homepage
-       </a>
+<a
+    href={data.from === 'profile' ? '/profile' : '/'}
+    class="text-pink-300 hover:underline"
+>
+    {data.from === 'profile' ? 'Back to profile' : 'Back to homepage'}
+</a>
 
         <div class="bg-white/10 border border-white/10 rounded-3xl overflow-hidden shadow-xl mt-6">
             <img
