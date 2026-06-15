@@ -1,5 +1,4 @@
 import pool from '$lib/server/database.js';
-import { error } from '@sveltejs/kit';
 import { error, fail, redirect } from '@sveltejs/kit';
 
 export async function load({ params }) {
@@ -43,6 +42,7 @@ export async function load({ params }) {
         image,
         comments
     };
+  }
 
     export const actions = {
     comment: async ({ request, locals, params }) => {
@@ -66,4 +66,3 @@ export async function load({ params }) {
         throw redirect(303, `/images/${params.id}`);
     }
 };
-}
