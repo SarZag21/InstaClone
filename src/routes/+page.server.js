@@ -13,26 +13,11 @@ export async function load() {
             users.username
          FROM images
          JOIN users ON users.id = images.author_id
-         ORDER BY images.created_at DESC
+         ORDER BY images.votes DESC, images.created_at DESC
          LIMIT 25`
     );
-
-    const [topImages] = await pool.execute(
-    `SELECT 
-        images.id,
-        images.image,
-        images.description,
-        images.votes,
-        images.dislikes,
-        users.username
-     FROM images
-     JOIN users ON users.id = images.author_id
-     ORDER BY images.votes DESC
-     LIMIT 3`
-);
     return { 
-        images,
-        topImages
+        images
      };
 }
 export const actions = {
