@@ -25,3 +25,23 @@ export async function load({ locals }) {
         images
     };
 }
+
+     export const actions = {
+    deleteImage: async ({ request, locals }) => {
+        const form = await request.formData();
+
+        const imageId = form.get('imageId');
+
+        await pool.execute(
+            `DELETE FROM images
+             WHERE id = ?
+             AND author_id = ?`,
+            [imageId, locals.user.id]
+        );
+
+        return {
+            success: true
+        };
+    }
+
+};

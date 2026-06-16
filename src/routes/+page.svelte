@@ -91,12 +91,6 @@
                     @{image.username}
                 </p>
 
-                <a
-                    href={`/images/${image.id}`}
-                    class="text-blue-600 text-sm hover:underline"
-                >
-                    Details
-                </a>
             </div>
 
             <p class="text-slate-300 text-sm line-clamp-2">

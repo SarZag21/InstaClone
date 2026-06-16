@@ -70,15 +70,27 @@
                                 Likes {image.votes} · Dislikes {image.dislikes}
                             </p>
 
-                            <a
-                               href={`/images/${image.id}?from=profile`}
-                                class="inline-block mt-4 text-pink-300 hover:underline"
-                            >
-                                View details
-                            </a>
-                        </div>
-                    </div>
-                {/each}
+        <div class="flex justify-between items-center mt-4">
+          <form method="POST" action="?/deleteImage">
+        <input
+            type="hidden"
+            name="imageId"
+            value={image.id}
+        >
+
+        <button
+            type="submit"
+            class="text-red-400 hover:text-red-300"
+        >
+            Delete
+        </button>
+    </form>
+
+</div>
+ </div>
+ </div>
+                       
+    {/each}
             </div>
         {/if}
 
