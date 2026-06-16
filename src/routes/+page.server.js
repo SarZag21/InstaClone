@@ -61,6 +61,8 @@ export const actions = {
             console.log(err);
             return fail(500, { error: 'Voting failed.' });
         }
-        throw redirect(303, '/');
+        return {
+           success: true
+        };
     }
 };
