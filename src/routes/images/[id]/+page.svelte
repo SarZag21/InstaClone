@@ -1,7 +1,8 @@
 <script>
     let { data, form } = $props();
+    // Currently selected image filter
     let selectedFilter = $state('');
-
+   // Available image filter styles
     const filters = {
         original: '',
         blackWhite: 'grayscale',
@@ -13,6 +14,8 @@
 
 <div class="min-h-screen bg-[#111827] text-white px-6 py-10">
  <div class="max-w-4xl mx-auto">
+
+ <!-- Back button -->
 <a
     href={data.from === 'profile' ? '/profile' : '/'}
     class="text-pink-300 hover:underline"
@@ -21,8 +24,8 @@
 </a>
 
         <div class="bg-white/10 border border-white/10 rounded-3xl overflow-hidden shadow-xl mt-6">
-        <div class="p-4 border-b border-white/10">
-
+         <!-- Image filter controls -->
+    <div class="p-4 border-b border-white/10">
     <h3 class="font-bold text-white mb-3">
         Filters
     </h3>
@@ -72,6 +75,7 @@
     </div>
 
 </div>
+       <!-- Main image with selected filter -->
             <img
                 src={data.image.image}
                 alt={data.image.description}
@@ -79,6 +83,7 @@
             >
 
             <div class="p-6">
+               <!-- Image author information -->
               <div class="flex items-center gap-3 mb-3">
                 <div class="w-10 h-10 rounded-full bg-gradient-to-r from-pink-500 to-violet-500 flex items-center justify-center font-bold">
                   {data.image.username[0].toUpperCase()}
@@ -89,10 +94,12 @@
                  </p>
             </div>
 
+                <!-- Image description -->
                 <p class="text-slate-300 mt-4">
                     {data.image.description}
                 </p>
-
+                
+                <!-- Vote statistics -->
                 <p class="text-slate-400 text-sm mt-3">
                    {data.image.votes} Likes  
                    {data.image.dislikes} Dislikes
@@ -100,7 +107,7 @@
 
 <hr class="border-white/10 my-6">
 
-       
+         <!-- Comments section header -->
         <div class="flex justify-between items-center mb-5">
             <div>
                 <h2 class="text-2xl font-black text-white">
@@ -116,7 +123,8 @@
                 {data.comments.length}
             </span>
         </div>
-
+        
+        <!-- Comment form -->
         <form method="POST" action="?/comment" class="mb-6">
             <textarea
                 name="text"
@@ -132,7 +140,7 @@
                 Post Comment
             </button>
         </form>
-
+  <!-- Display comments -->
         {#if data.comments.length === 0}
             <p class="text-slate-400 text-center">
                 No comments yet. Be the first one.
@@ -140,6 +148,7 @@
         {:else}
             <div class="space-y-4">
                 {#each data.comments as comment}
+                   <!-- Single comment -->
                    <div class="bg-slate-800/50 border border-white/5 rounded-2xl p-4 hover:bg-slate-800 transition">
                        <p class="font-bold text-white">
                            @{comment.username}
