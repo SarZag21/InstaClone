@@ -1,16 +1,19 @@
 <script>
+ // Homepage data and form messages
     let { data, form } = $props();
 </script>
 
 <div class="min-h-screen bg-[#111827] text-white">
+   <!-- Navigation bar -->  
     <header class="sticky top-0 z-20 bg-[#111827]/90 backdrop-blur border-b border-white/10">
         <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+     <!-- Website logo -->
             <div>
               <a href="/" class="text-2xl font-black tracking-tight">
     Insta<span class="text-pink-400">Clone</span>
 </a>
             </div>
-
+ <!-- Main navigation -->
             <nav class="flex gap-3 items-center text-sm font-medium">
              <a href="/register" class="px-4 py-2 rounded-full hover:bg-white/10 transition">
         Register
@@ -27,6 +30,7 @@
                     Profile
                 </a>
 
+ <!-- Logout button -->
                 <form method="POST" action="/logout?/logout">
                   <button type="submit" class="px-4 py-2 rounded-full text-red-300 hover:bg-red-500/10 transition">
                    Logout
@@ -37,20 +41,23 @@
     </header>
 
     <main class="max-w-6xl mx-auto px-6 py-8">
-    <section class="mb-8">
+
+ <!-- Homepage title -->
+ <section class="mb-8">
    <h2 class="text-4xl font-black tracking-tight">
         Latest Images
     </h2>
 
-   
-
 </section>
 
+<!-- Display error messages -->
 {#if form?.error}
     <p class="bg-red-100 border border-red-400 text-red-700 p-4 rounded-xl mb-6">
         {form.error}
     </p>
 {/if}
+
+ <!-- Empty gallery message -->
 {#if data.images.length === 0}
 
     <div class="bg-white border border-gray-200 rounded-2xl p-10 text-center shadow-sm">
@@ -69,13 +76,14 @@
     </div>
 
 {:else}
-
+  <!-- Image gallery -->
   <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 items-start">
 
 {#each data.images as image}
 
+ <!-- Image card -->
   <div class="bg-white/10 border border-white/10 rounded-3xl overflow-hidden hover:-translate-y-1 hover:bg-white/15 transition duration-300 flex flex-col">
-
+ <!-- Open image details -->
       <a href={`/images/${image.id}?from=home`}>
             <img
                 src={image.image}
@@ -85,12 +93,12 @@
         </a>
 
         <div class="p-5 flex flex-col gap-4">
-
+ <!-- Author name -->
             <div class="flex justify-between items-center">
                 <p class="font-bold text-white">
                     @{image.username}
                 </p>
-
+  <!-- Highlight popular images -->
           {#if image.votes >= 5}
              <span class="inline-block mt-2 bg-pink-500/20 text-pink-300 px-3 py-1 rounded-full text-xs font-bold">
               Most liked
@@ -98,13 +106,13 @@
           {/if}
 
             </div>
-
+ <!-- Image description -->
             <p class="text-slate-300 text-sm line-clamp-2">
                 {image.description}
             </p>
-
+ <!-- Voting buttons -->
             <div class="flex gap-3 pt-2">
-
+<!-- Like button -->
                 <form method="POST" action="?/vote">
                     <input type="hidden" name="imageId" value={image.id}>
                     <input type="hidden" name="voteType" value="like">
@@ -116,7 +124,7 @@
                         Like {image.votes}
                     </button>
                 </form>
-
+<!-- Dislike button -->
                 <form method="POST" action="?/vote">
                     <input type="hidden" name="imageId" value={image.id}>
                     <input type="hidden" name="voteType" value="dislike">
