@@ -1,3 +1,4 @@
+// Upload image file to Vercel Blob storage
 import { put } from "@vercel/blob";
 import { BLOB_READ_WRITE_TOKEN } from "$env/static/private";
 
