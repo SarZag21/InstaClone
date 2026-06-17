@@ -93,7 +93,7 @@
 
           {#if image.votes >= 5}
              <span class="inline-block mt-2 bg-pink-500/20 text-pink-300 px-3 py-1 rounded-full text-xs font-bold">
-              Trending
+              Most liked
              </span>
           {/if}
 
