@@ -68,7 +68,7 @@ export async function load({ params, url }) {
              VALUES (?, ?, ?)`,
             [params.id, locals.user.id, text]
         );
-  // Reload the page after posting the comment
+  // Redirect back to image detail page after posting the comment
         throw redirect(303, `/images/${params.id}`);
     }
 };
